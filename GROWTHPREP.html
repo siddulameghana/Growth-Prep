@@ -1,0 +1,1099 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GrowthPrep</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    background:#f4f8fb;
+    color:#222;
+}
+
+button{
+    cursor:pointer;
+}
+
+/* ================= COMMON ================= */
+
+.page{
+    min-height:100vh;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:30px;
+}
+
+button{
+    border:none;
+    border-radius:8px;
+}
+
+.primary{
+    background:#1593b8;
+    color:white;
+    padding:12px 20px;
+    font-weight:bold;
+}
+
+.back{
+    background:white;
+    color:#1593b8;
+    border:1px solid #1593b8;
+    padding:10px 16px;
+    margin-bottom:20px;
+}
+
+/* ================= LOGIN ================= */
+
+#loginPage{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#e9faff,#fff);
+}
+
+.login-card{
+    width:400px;
+    background:white;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 10px 35px rgba(0,0,0,.12);
+    text-align:center;
+}
+
+.logo{
+    font-size:45px;
+}
+
+.login-card h1{
+    color:#1593b8;
+    margin:10px 0;
+}
+
+.login-card p{
+    color:#777;
+    margin-bottom:25px;
+}
+
+.login-card input{
+    width:100%;
+    padding:14px;
+    margin:8px 0;
+    border:1px solid #ccc;
+    border-radius:9px;
+}
+
+.login-btn{
+    width:100%;
+    padding:14px;
+    margin-top:12px;
+    background:#1593b8;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+}
+
+/* ================= HEADER ================= */
+
+.header{
+    background:white;
+    padding:20px 6%;
+    border-bottom:1px solid #ddd;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.header h1{
+    color:#1593b8;
+}
+
+.header p{
+    color:#777;
+    margin-top:5px;
+}
+
+.header-actions{
+    display:flex;
+    gap:10px;
+}
+
+.small{
+    padding:10px 15px;
+    background:white;
+    color:#1593b8;
+    border:1px solid #1593b8;
+}
+
+/* ================= DASHBOARD ================= */
+
+#dashboard{
+    display:none;
+}
+
+.premium-banner{
+    background:linear-gradient(135deg,#e7faff,#fff);
+    border:1px solid #9edbea;
+    border-radius:18px;
+    padding:28px;
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    margin-bottom:35px;
+}
+
+.premium-banner h2{
+    color:#1593b8;
+    margin-bottom:8px;
+}
+
+.premium-banner p{
+    color:#555;
+}
+
+.features{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:8px;
+    margin-top:15px;
+}
+
+.features span{
+    color:#287d45;
+}
+
+.price{
+    text-align:center;
+    min-width:180px;
+}
+
+.price h1{
+    font-size:40px;
+}
+
+.price button{
+    background:#1593b8;
+    color:white;
+    padding:12px 20px;
+    margin-top:10px;
+}
+
+.title{
+    margin:25px 0 8px;
+}
+
+.subtitle{
+    color:#777;
+    margin-bottom:20px;
+}
+
+.category-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.category-card{
+    background:white;
+    border:1px solid #ddd;
+    border-radius:16px;
+    padding:23px;
+    transition:.2s;
+}
+
+.category-card:hover,
+.branch-card:hover,
+.feature-card:hover,
+.mock-card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+.icon{
+    font-size:38px;
+}
+
+.category-card h3{
+    margin:12px 0 7px;
+}
+
+.category-card p{
+    color:#777;
+    line-height:1.4;
+}
+
+.category-card button{
+    margin-top:15px;
+    padding:10px 15px;
+    background:#1593b8;
+    color:white;
+}
+
+/* ================= BRANCH ================= */
+
+#branchPage,
+#examHome,
+#mockPage,
+#examPage,
+#performancePage,
+#aiPage,
+#paymentPage{
+    display:none;
+}
+
+.branch-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.branch-card{
+    background:white;
+    border:1px solid #ddd;
+    border-radius:15px;
+    padding:23px;
+    transition:.2s;
+}
+
+.branch-card h3{
+    color:#1593b8;
+    margin:10px 0;
+}
+
+.branch-card p{
+    color:#777;
+    line-height:1.4;
+}
+
+.branch-card button{
+    margin-top:15px;
+    padding:10px 15px;
+    background:#1593b8;
+    color:white;
+}
+
+/* ================= EXAM HOME ================= */
+
+.exam-banner{
+    background:#162b3a;
+    color:white;
+    padding:28px;
+    border-radius:16px;
+    margin-bottom:25px;
+}
+
+.exam-banner p{
+    color:#d5e0e6;
+    margin-top:7px;
+}
+
+.feature-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.feature-card{
+    background:white;
+    border:1px solid #ddd;
+    border-radius:15px;
+    padding:25px;
+    transition:.2s;
+}
+
+.feature-icon{
+    font-size:35px;
+}
+
+.feature-card h3{
+    margin:10px 0;
+}
+
+.feature-card p{
+    color:#777;
+    line-height:1.5;
+}
+
+.feature-card button{
+    margin-top:15px;
+    padding:11px 16px;
+    background:#1593b8;
+    color:white;
+}
+
+.free{
+    color:#208447 !important;
+    font-weight:bold;
+}
+
+.locked{
+    color:#b87900 !important;
+    font-weight:bold;
+}
+
+/* ================= MOCK TESTS ================= */
+
+.mock-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.mock-card{
+    background:white;
+    border:1px solid #ddd;
+    border-radius:15px;
+    padding:25px;
+    transition:.2s;
+}
+
+.mock-card h3{
+    margin-bottom:8px;
+}
+
+.mock-card p{
+    color:#777;
+    margin:7px 0;
+}
+
+.mock-card button{
+    margin-top:12px;
+    padding:11px 18px;
+    background:#1593b8;
+    color:white;
+}
+
+.mock-card.locked-card{
+    border-color:#e1c27a;
+}
+
+.lock-icon{
+    color:#b87900;
+    font-weight:bold;
+}
+
+/* ================= EXAM ================= */
+
+#examPage{
+    min-height:100vh;
+    background:#eef4f7;
+}
+
+.exam-top{
+    background:#162b3a;
+    color:white;
+    padding:15px 25px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.timer{
+    background:#e74c3c;
+    padding:10px 18px;
+    border-radius:8px;
+    font-weight:bold;
+}
+
+.exam-layout{
+    max-width:1200px;
+    margin:auto;
+    padding:20px;
+    display:grid;
+    grid-template-columns:1fr 300px;
+    gap:20px;
+}
+
+.question-box{
+    background:white;
+    padding:28px;
+    border-radius:15px;
+}
+
+.question-info{
+    color:#1593b8;
+    font-weight:bold;
+    margin-bottom:15px;
+}
+
+.question-text{
+    font-size:21px;
+    line-height:1.5;
+    margin-bottom:20px;
+}
+
+.option{
+    display:block;
+    width:100%;
+    text-align:left;
+    padding:14px;
+    margin:10px 0;
+    background:#f6f8fa;
+    border:1px solid #ddd;
+}
+
+.option:hover{
+    background:#e8f7fb;
+}
+
+.option.selected{
+    background:#dff5fb;
+    border-color:#1593b8;
+}
+
+.exam-controls{
+    display:flex;
+    justify-content:space-between;
+    margin-top:25px;
+    gap:10px;
+}
+
+.exam-controls button{
+    padding:12px 18px;
+    background:#1593b8;
+    color:white;
+}
+
+.exam-controls .submit{
+    background:#e74c3c;
+}
+
+.camera-box{
+    background:#111;
+    padding:10px;
+    border-radius:12px;
+    height:max-content;
+    position:sticky;
+    top:15px;
+}
+
+#camera{
+    width:100%;
+    display:block;
+    border-radius:8px;
+    background:#000;
+}
+
+.camera-status{
+    color:white;
+    text-align:center;
+    padding:8px;
+    font-size:13px;
+}
+
+/* ================= PERFORMANCE ================= */
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+    margin-top:25px;
+}
+
+.stat{
+    background:white;
+    border:1px solid #ddd;
+    border-radius:15px;
+    padding:25px;
+    text-align:center;
+}
+
+.stat h2{
+    color:#1593b8;
+    font-size:32px;
+}
+
+.stat p{
+    color:#777;
+    margin-top:5px;
+}
+
+.result{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    border:1px solid #ddd;
+    margin-top:20px;
+}
+
+/* ================= AI ================= */
+
+.ai-box{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    border:1px solid #ddd;
+}
+
+.ai-box textarea{
+    width:100%;
+    min-height:140px;
+    padding:15px;
+    border:1px solid #ccc;
+    border-radius:10px;
+    margin:15px 0;
+    font-size:16px;
+}
+
+.ai-answer{
+    display:none;
+    background:#effbfd;
+    border-left:4px solid #1593b8;
+    padding:20px;
+    line-height:1.6;
+}
+
+/* ================= PAYMENT ================= */
+
+.payment-card{
+    max-width:700px;
+    margin:auto;
+    background:white;
+    border:1px solid #ddd;
+    border-radius:18px;
+    padding:30px;
+}
+
+.payment-price{
+    text-align:center;
+    margin:20px;
+}
+
+.payment-price h1{
+    color:#1593b8;
+    font-size:45px;
+}
+
+.payment-methods{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:12px;
+    margin:25px 0;
+}
+
+.payment-method{
+    background:#fafafa;
+    border:1px solid #ddd;
+    border-radius:12px;
+    padding:20px 10px;
+    text-align:center;
+    font-weight:bold;
+}
+
+.payment-method.selected{
+    border:2px solid #1593b8;
+    background:#effbfd;
+}
+
+.pay-button{
+    width:100%;
+    padding:14px;
+    background:#1593b8;
+    color:white;
+    font-weight:bold;
+    font-size:16px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:850px){
+
+    .category-grid,
+    .branch-grid,
+    .feature-grid,
+    .mock-grid{
+        grid-template-columns:1fr;
+    }
+
+    .premium-banner{
+        flex-direction:column;
+    }
+
+    .features{
+        grid-template-columns:1fr;
+    }
+
+    .exam-layout{
+        grid-template-columns:1fr;
+    }
+
+    .camera-box{
+        position:static;
+    }
+
+    .stats{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .payment-methods{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .header{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:15px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- =====================================================
+LOGIN
+===================================================== -->
+
+<div id="loginPage">
+
+    <div class="login-card">
+
+        <div class="logo">📈</div>
+
+        <h1>GrowthPrep</h1>
+
+        <p>Prepare. Practice. Grow.</p>
+
+        <input
+            id="name"
+            type="text"
+            placeholder="Enter your name">
+
+        <input
+            id="email"
+            type="email"
+            placeholder="Enter your email">
+
+        <button
+            class="login-btn"
+            onclick="login()">
+
+            Login →
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+DASHBOARD
+===================================================== -->
+
+<div id="dashboard" class="page">
+
+    <div class="header">
+
+        <div>
+            <h1>GrowthPrep 📈</h1>
+            <p id="welcome">Welcome!</p>
+        </div>
+
+        <div class="header-actions">
+
+            <button
+                class="small"
+                onclick="openPerformance()">
+                📊 Performance
+            </button>
+
+            <button
+                class="small"
+                onclick="openAI()">
+                🤖 AI Assistant
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div class="container">
+
+        <div class="premium-banner">
+
+            <div>
+
+                <h2>💎 GrowthPrep Premium</h2>
+
+                <p>
+                    Pay ₹250 once and unlock all premium
+                    courses, tests and papers.
+                </p>
+
+                <div class="features">
+
+                    <span>✅ All Exams</span>
+                    <span>✅ Mock Tests</span>
+                    <span>✅ Previous Papers</span>
+                    <span>✅ Subject-wise Tests</span>
+                    <span>✅ Topic-wise Tests</span>
+                    <span>✅ Performance</span>
+                    <span>✅ AI Doubt Solver</span>
+                    <span>✅ All Courses</span>
+
+                </div>
+
+            </div>
+
+            <div class="price">
+
+                <h1>₹250</h1>
+
+                <p>One-Time</p>
+
+                <button onclick="openPayment()">
+                    🔓 Unlock Premium
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <h2 class="title">
+            Explore Exam Categories
+        </h2>
+
+        <p class="subtitle">
+            Select a category to view its branches and exams.
+        </p>
+
+
+        <div class="category-grid">
+
+            <div class="category-card">
+                <div class="icon">🏛️</div>
+                <h3>Government Exams</h3>
+                <p>SSC • UPSC • State PSC • EPFO • FCI</p>
+                <button onclick="openCategory('Government Exams')">
+                    Explore →
+                </button>
+            </div>
+
+            <div class="category-card">
+                <div class="icon">⚙️</div>
+                <h3>Engineering Exams</h3>
+                <p>JEE • EAMCET • State Entrance</p>
+                <button onclick="openCategory('Engineering Exams')">
+                    Explore →
+                </button>
+            </div>
+
+            <div class="category-card">
+                <div class="icon">🎓</div>
+                <h3>GATE</h3>
+                <p>All GATE Papers</p>
+                <button onclick="openCategory('GATE')">
+                    Explore →
+                </button>
+            </div>
+
+            <div class="category-card">
+                <div class="icon">🚀</div>
+                <h3>ISRO</h3>
+                <p>Scientist • Technical • Assistant</p>
+                <button onclick="openCategory('ISRO')">
+                    Explore →
+                </button>
+            </div>
+
+            <div class="category-card">
+                <div class="icon">🛡️</div>
+                <h3>DRDO</h3>
+                <p>RAC • CEPTAM • Technical</p>
+                <button onclick="openCategory('DRDO')">
+                    Explore →
+                </button>
+            </div>
+
+            <div class="category-card">
+                <div class="icon">🏭</div>
+                <h3>PSU Exams</h3>
+                <p>ONGC • NTPC • BHEL • BEL</p>
+                <button onclick="openCategory('PSU Exams')">
+                    Explore →
+                </button>
+            </div>
+
+            <div class="category-card">
+                <div class="icon">🏦</div>
+                <h3>Banking Exams</h3>
+                <p>IBPS • SBI • RBI • NABARD</p>
+                <button onclick="openCategory('Banking Exams')">
+                    Explore →
+                </button>
+            </div>
+
+            <div class="category-card">
+                <div class="icon">🚆</div>
+                <h3>Railway Exams</h3>
+                <p>NTPC • Group D • ALP • JE</p>
+                <button onclick="openCategory('Railway Exams')">
+                    Explore →
+                </button>
+            </div>
+
+            <div class="category-card">
+                <div class="icon">🎖️</div>
+                <h3>Defence / Army</h3>
+                <p>NDA • CDS • AFCAT • CAPF</p>
+                <button onclick="openCategory('Defence / Army')">
+                    Explore →
+                </button>
+            </div>
+
+            <div class="category-card">
+                <div class="icon">⚖️</div>
+                <h3>Law Exams</h3>
+                <p>CLAT • AILET • SLAT</p>
+                <button onclick="openCategory('Law Exams')">
+                    Explore →
+                </button>
+            </div>
+
+            <div class="category-card">
+                <div class="icon">🩺</div>
+                <h3>Medical Exams</h3>
+                <p>NEET • INI-CET</p>
+                <button onclick="openCategory('Medical Exams')">
+                    Explore →
+                </button>
+            </div>
+
+            <div class="category-card">
+                <div class="icon">👮</div>
+                <h3>Police Exams</h3>
+                <p>CPO • SI • Constable</p>
+                <button onclick="openCategory('Police Exams')">
+                    Explore →
+                </button>
+            </div>
+
+            <div class="category-card">
+                <div class="icon">👩‍🏫</div>
+                <h3>Teaching Exams</h3>
+                <p>CTET • TET • KVS • NVS</p>
+                <button onclick="openCategory('Teaching Exams')">
+                    Explore →
+                </button>
+            </div>
+
+            <div class="category-card">
+                <div class="icon">💼</div>
+                <h3>MBA / Management</h3>
+                <p>TS ICET • AP ICET • CAT • XAT</p>
+                <button onclick="openCategory('MBA / Management')">
+                    Explore →
+                </button>
+            </div>
+
+            <div class="category-card">
+                <div class="icon">🌾</div>
+                <h3>Agriculture Exams</h3>
+                <p>ICAR • Agriculture Exams</p>
+                <button onclick="openCategory('Agriculture Exams')">
+                    Explore →
+                </button>
+            </div>
+
+            <div class="category-card">
+                <div class="icon">🔬</div>
+                <h3>Science & Research</h3>
+                <p>CSIR • Research Exams</p>
+                <button onclick="openCategory('Science & Research')">
+                    Explore →
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+BRANCH PAGE
+===================================================== -->
+
+<div id="branchPage" class="page">
+
+    <div class="header">
+
+        <div>
+            <h1>GrowthPrep 📈</h1>
+            <p>Select your exam</p>
+        </div>
+
+    </div>
+
+
+    <div class="container">
+
+        <button
+            class="back"
+            onclick="backDashboard()">
+            ← Dashboard
+        </button>
+
+        <h1 id="categoryTitle">
+            Government Exams
+        </h1>
+
+        <p class="subtitle">
+            Choose your branch or exam.
+        </p>
+
+        <div
+            class="branch-grid"
+            id="branchGrid">
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+EXAM HOME
+===================================================== -->
+
+<div id="examHome" class="page">
+
+    <div class="header">
+
+        <div>
+            <h1>GrowthPrep 📈</h1>
+            <p>Exam Preparation</p>
+        </div>
+
+    </div>
+
+
+    <div class="container">
+
+        <button
+            class="back"
+            onclick="backToBranches()">
+            ← Back to Exams
+        </button>
+
+
+        <div class="exam-banner">
+
+            <h1 id="examTitle">
+                SSC CGL
+            </h1>
+
+            <p>
+                Choose your preparation section.
+            </p>
+
+        </div>
+
+
+        <div class="feature-grid">
+
+            <div class="feature-card">
+
+                <div class="feature-icon">📝</div>
+
+                <h3>Mock Tests</h3>
+
+                <p>
+                    Full-length practice tests.
+                </p>
+
+                <p class="free">
+                    Mock Test 1 — FREE
+                </p>
+
+                <p class="locked">
+                    Mock Test 2 onwards — ₹250
+                </p>
+
+                <button onclick="openMockTests()">
+                    Open Mock Tests →
+                </button>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">📄</div>
+
+                <h3>Previous Papers</h3>
+
+                <p>
+                    Previous year exam papers.
+                </p>
+
+                <p class="locked">
+                    🔒 Premium ₹250
+                </p>
+
+                <button onclick="openPayment('Previous Papers')">
+                    Unlock →
+                </button>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">📚</div>
+
+                <h3>Subject-wise Tests</h3>
+
+                <p>
+                    Practice subject by subject.
+                </p>
+
+                <p class="locked">
+                    🔒 Premium ₹250
+                </p>
+
+                <button onclick="openPayment('Subject-wise Tests')">
+                    Unlock →
+                </button>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">📖</div>
+
+                <h3>Topic-wise Tests</h3>
+
+                <p>
+                    Practice topic by topic.
+                </p>
+
+                <p class="locked">
+                    🔒 Premium ₹250
+                </p>
+
+                <button onclick="openPayment('Topic-wise Tests')">
+                    Unlock →
+                </button>
