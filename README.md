@@ -1,16 +1,80 @@
-# React + Vite
+# 🚀 GrowthPrep
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+GrowthPrep is a modern competitive exam preparation platform designed to help students prepare for government and entrance examinations through mock tests, previous papers, performance tracking, and AI-powered learning assistance.
 
-Currently, two official plugins are available:
+## 📚 Exam Categories
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+GrowthPrep is designed with multiple examination categories:
 
-## React Compiler
+- SSC
+- Banking
+- RRB
+- Police
+- GATE
+- UPSC
+- Defence
+- ISRO
+- Law
+- Engineering
+- Medical
+- Management
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ✨ Key Features
 
-## Expanding the ESLint configuration
+- 🔐 User Login & Registration
+- 📊 Interactive Dashboard
+- 📝 Exam-wise Mock Tests
+- 🎯 Beginner, Intermediate & Advanced Levels
+- 📈 Performance Tracking
+- 📄 Previous Year Papers
+- 💎 Premium Learning Access
+- 🤖 AI-powered Question Generation
+- 💬 AI Doubt Assistance
+- 📷 Camera-based Exam Monitoring
+- ⏱️ Timed Mock Tests
+- 📱 Responsive User Interface
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🧠 Mock Test System
+
+Users can select:
+
+**Category → Exam → Post/Branch → Level → Mock Test**
+
+The platform is designed to support different exam patterns and difficulty levels.
+
+## 💎 Premium
+
+The planned premium version provides extended access to:
+
+- Full-length mock tests
+- Previous year papers
+- All exam categories
+- Advanced performance analysis
+- AI learning assistance
+
+## 🛠️ Technologies Used
+
+- React
+- JavaScript
+- Vite
+- HTML5
+- CSS3
+- Git & GitHub
+
+## 🎯 Project Goal
+
+The goal of GrowthPrep is to create a single platform where students can discover competitive exams, practice mock tests, analyze their performance, and improve their preparation in a structured way.
+
+## 🚧 Project Status
+
+GrowthPrep is currently under active development. More exam content, AI features, payment integration, previous papers, and advanced performance analytics will be added in future updates.
+
+## 👩‍💻 Developer
+
+**Siddula Meghana**
+
+B.Tech – Computer Science & Engineering
+
+---
+
+⭐ If you find this project interesting, feel free to explore the repository!
